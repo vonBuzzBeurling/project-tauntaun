@@ -1,4 +1,4 @@
-.App{
+.App {
   display: grid;
   grid-template-columns: 250px 100fr;
   grid-template-rows: auto 100fr auto;
@@ -6,12 +6,12 @@
   width: 100vw;
   overflow-x: hidden;
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   background-color: transparent;
 }
 
-.App > header{
+.App>header {
   grid-column: 1 / 3;
   background-color: #ffffff;
   z-index: 1000;
@@ -20,36 +20,85 @@
   flex-flow: row nowrap;
   flex-grow: 0;
   justify-content: space-between;
-  box-shadow: 0 0 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+  box-shadow: var(--shadow);
 }
 
-.App > header > .titleVersion{
+.App>header>.titleVersion {
   display: flex;
   align-items: baseline;
 }
 
-.App > header h1{
+.App>header h1 {
   margin: 0;
   margin: 0 10px 0 0;
 }
 
-.App .Menubar{
+.App .Menubar {
   grid-column: 1 /span 1;
   grid-row: 2 / 2;
   background-color: transparent;
   z-index: 50;
 }
 
-.App > main{
+.App>main {
   background-color: wheat;
   margin: 10px 10px 10px 10px;
   position: relative;
 }
 
-.App > footer{
+.App>footer {
   z-index: 20;
 }
 
-.mapContainer{
+.mapContainer {
   position: relative;
+}
+
+.App>footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  box-shadow: var(--shadow);
+}
+
+.btDarkModeContainer {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.App.light .btDarkModeContainer{
+  background-color: var(--backgroundColorLight);
+}
+
+.App.dark .btDarkModeContainer{
+  background-color: var(--backgroundColorDark);
+}
+
+.btDarkModeContainer .btDarkMode {
+  border-width: 1px;
+  border-style: solid;
+  background-color: transparent;
+  transition: var(--transition);
+}
+
+.App.light .btDarkMode{
+  border-color: var(--buttonColorLight);
+  color: var(--buttonColorLight);
+}
+
+.App.light .btDarkMode:hover,
+.App.ligth .btDarkMode:active {
+  color: var(--backgroundColorLight);
+  background-color: var(--buttonColorLight);
+}
+
+.App.dark .btDarkMode {
+  border: 1px solid var(--buttonColorDark);
+  color: var(--buttonColorDark);
+}
+
+.App.dark .btDarkMode:hover,
+.App.dark .btDarkMode:active {
+  color: var(--backgroundColorDark);
+  background-color: var(--buttonColorDark);
 }

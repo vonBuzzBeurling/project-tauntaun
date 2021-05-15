@@ -1,4 +1,5 @@
 import './App.css';
+import './theme/color.css';
 
 import React, { useEffect, useState } from 'react';
 
@@ -56,6 +57,7 @@ export function App() {
 
   const [initializedState, setInitializedState] = useState(InitialzationState.UNINITIALIZED);
   const [connected, setConnected] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   const onConnectionClosed = () => {
     console.log('Websocket closed!');
@@ -117,13 +119,17 @@ export function App() {
 
   const showRoleSelectionForm = sessionData !== undefined && !commanderMode && showRoleSelectionFormConfig;
 
+  const onClickDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   const renderApp = () => {
     return (
       <React.Fragment>
         {mapToken ? (
           <React.Fragment>
             <ModeContext.Provider value={modeContext}>
-              <section className="App">
+              <section className={'App ' + (darkMode ? 'dark' : 'light')}>
                 <header>
                   <div className="titleVersion">
                     <h1>Project TaunTaun</h1>
@@ -147,6 +153,11 @@ export function App() {
                 </main>
                 <footer>
                   <HelpBar />
+                  <div className="btDarkModeContainer">
+                    <button className="btDarkMode" onClick={onClickDarkMode}>
+                      {darkMode ? 'Light Mode' : 'Dark Mode'}
+                    </button>
+                  </div>
                 </footer>
               </section>
               <section className="mapContainer">

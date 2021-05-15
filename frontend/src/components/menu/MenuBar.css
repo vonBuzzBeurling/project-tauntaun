@@ -1,40 +1,80 @@
 .Menubar>div {
   margin-top: 5px;
   padding: 10px;
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 0 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+  box-shadow: var(--shadow);
+}
+
+.App.light .Menubar>div{
+  background-color: var(--backgroundColorLight);
+  color: var(--textColorLight);
+}
+
+.App.dark .Menubar>div{
+  background-color: var(--backgroundColorDark);
+  color: var(--textColorDark);
 }
 
 .Menubar>button {
-  background-color: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-width: 1px;
+  border-style:  solid;
   padding: 6px 10px;
-  transition: 0.3s all ease;
+  transition: var(--transition);
   box-sizing: border-box;
   width: 100%;
-  box-shadow: 0 0 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
 }
 
-.Menubar>button:hover {
-  background-color: rgba(49, 107, 170);
-  color: #ffffff;
-  padding: 6px 10px;
+.App.light .Menubar>button{
+  background-color: var(--backgroundColorLight);
+  border-color: var(--buttonColorLight);
+  color: var(--textColorLight);
 }
 
-.Menubar>div button {
+.App.light .Menubar>button:hover, .App.dark .Menubar>button:active {
+  background-color: var(--buttonColorLight);
+  color: var(--backgroundColorLight);
+}
+
+.App.dark .Menubar>button{
+  background-color: var(--backgroundColorDark);
+  border-color: var(--backgroundColorDark);
+  color: var(--textColorDark);
+}
+
+.App.dark .Menubar>button:hover, .App.dark .Menubar>button:active {
+  background-color: var(--buttonColorDark);
+  color: var(--backgroundColorDark);
+}
+
+.Menubar .MenuBarInner button {
   padding: 12px;
   margin: 0 6px 5px 0;
-  background-color: rgba(0, 0, 0, 0);
-  border: 1px solid rgba(0, 0, 0, 0.54);
-  color: rgba(0, 0, 0, 0.95);
-  transition: all 0.3s ease;
+  transition: var(--transition);
   width: 100%;
+  border-width: 1px;
+  border-style: solid;
 }
 
-.Menubar>div button:hover {
-  box-shadow: 0 0 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
-  border-color: rgba(0, 0, 0, 0.5);
-  color: rgba(0, 0, 0, 0.8);
+.App.light .Menubar .MenuBarInner button{
+  background-color: var(--backgroundColorLight);
+  border-color: var(--buttonColorLight);
+  color: var(--buttonColorLight);
+}
+
+.App.light .Menubar .MenuBarInner button:hover, .App.light .Menubar .MenuBarInner button:active {
+  background-color: var(--buttonColorLight);
+  color: var(--backgroundColorLight);
+  cursor: pointer;
+}
+
+.App.dark .Menubar .MenuBarInner button{
+  background-color: var(--backgroundColorDark);
+  border-color: var(--buttonColorDark);
+  color: var(--buttonColorDark);
+}
+
+.App.dark .Menubar .MenuBarInner button:hover, .App.dark .Menubar .MenuBarInner button:active {
+  background-color: var(--buttonColorDark);
+  color: var(--backgroundColorDark);
   cursor: pointer;
 }
 
@@ -46,21 +86,4 @@
 .AdminButton {
   background-color: transparent;
   color: red;
-}
-
-.Menubar .MenuBarInner button {
-  margin: 0 0 10px 0;
-  background-color: rgba(49, 107, 170, 0);
-  border: 1px solid rgba(49, 107, 170, 0.8);
-  color: rgba(49, 107, 170, 0.8);
-  padding: 12px;
-  width: 100%;
-  transition: 0.3s all ease;
-  box-sizing: border-box;
-}
-
-.Menubar .MenuBarInner button:hover,
-.Menubar .MenuBarInner button:active {
-  background-color: rgba(49, 107, 170, 0.8);
-  color: #ffffff;
 }
