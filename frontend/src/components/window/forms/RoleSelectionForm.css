@@ -1,13 +1,22 @@
 .RoleSelectionForm {
   z-index: 200;
   position: absolute;
-  background-color: #ffffff;
-  box-shadow: 0 0 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+  box-shadow: var(--shadow);
   max-width: 100%;
   max-height: 100%;
   overflow-y: auto;
   box-sizing: border-box;
   padding: 10px;
+}
+
+.App.light .RoleSelectionForm {
+  background-color: var(--backgroundColorLight);
+  color: var(--textColorLight);
+}
+
+.App.dark .RoleSelectionForm {
+  background-color: var(--backgroundColorDark);
+  color: var(--textColorDark);
 }
 
 .RoleSelectionForm header h2 {
@@ -18,7 +27,16 @@
   display: flex;
   flex-flow: column nowrap;
   padding: 3px 5px 5px 5px;
-  border: 1px solid rgba(0, 0, 0, .24);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.App.light .RoleSelectionForm .nameContainer .inputContainer {
+  border-color: var(--versionColorLight);
+}
+
+.App.dark .RoleSelectionForm .nameContainer .inputContainer {
+  border-color: var(--versionColorDark);
 }
 
 .RoleSelectionForm .nameContainer .inputContainer span {
@@ -27,44 +45,80 @@
 
 .RoleSelectionForm .nameContainer .inputContainer input {
   border-width: 0 0 1px 0;
+  border-style: solid;
   border-color: rgba(0, 0, 0, 0);
   padding: 0;
   outline: none;
   transition: 0.3s all ease;
+  background-color: transparent;
 }
 
-.RoleSelectionForm .nameContainer .inputContainer input:focus-within,
-.RoleSelectionForm .nameContainer .inputContainer input:focus {
-  border-color: rgba(49, 107, 170, 0.8);
+.App.light .RoleSelectionForm .nameContainer .inputContainer input {
+  color: var(--textColorLight);
 }
 
-.RoleSelectionForm .nameContainer button, .RoleSelectionForm .bottomButton {
+.App.dark .RoleSelectionForm .nameContainer .inputContainer input {
+  color: var(--textColorDark);
+}
+
+.App.light .RoleSelectionForm .nameContainer .inputContainer input:focus-within,
+.App.light .RoleSelectionForm .nameContainer .inputContainer input:focus {
+  border-color: var(--buttonColorLight);
+}
+
+.App.dark .RoleSelectionForm .nameContainer .inputContainer input:focus-within,
+.App.dark .RoleSelectionForm .nameContainer .inputContainer input:focus {
+  border-color: var(--buttonColorDark);
+}
+
+.RoleSelectionForm .nameContainer button,
+.RoleSelectionForm .bottomButton {
   margin: 5px 0 0 0;
-  background-color: rgba(49, 107, 170, 0);
-  border: 1px solid rgba(49, 107, 170, 0.8);
-  color: rgba(49, 107, 170, 0.8);
+  background-color: transparent;
+  border-width: 1px;
+  border-style: solid;
   padding: 5px;
   width: 100%;
-  transition: 0.3s all ease;
+  transition: var(--transition);
 }
 
-.RoleSelectionForm .nameContainer button:hover,
-.RoleSelectionForm .nameContainer button:active,
-.RoleSelectionForm .bottomButton:hover,
-.RoleSelectionForm .bottomButton:active {
-    background-color: rgba(49, 107, 170, 0.8);
-    color: #ffffff;
+.App.light .RoleSelectionForm .nameContainer button,
+.App.light .RoleSelectionForm .bottomButton {
+  color: var(--buttonColorLight);
+  border-color: var(--buttonColorLight);
 }
 
-.RoleSelectionForm .groupSelectContainer{
-    margin: 10px 0 0 0;
+.App.dark .RoleSelectionForm .nameContainer button,
+.App.dark .RoleSelectionForm .bottomButton {
+  color: var(--buttonColorDark);
+  border-color: var(--buttonColorDark);
 }
 
-.RoleSelectionForm .unitSelectContainer{
-    margin: 10px 0 0 0;
+.App.light .RoleSelectionForm .nameContainer button:hover,
+.App.light .RoleSelectionForm .nameContainer button:active,
+.App.light .RoleSelectionForm .bottomButton:hover,
+.App.light .RoleSelectionForm .bottomButton:active {
+  background-color: var(--buttonColorLight);
+  color: var(--backgroundColorLight);
 }
 
-.RoleSelectionForm .bottomButton{
-    display: block;
-    box-sizing: border-box;
+.App.dark .RoleSelectionForm .nameContainer button:hover,
+.App.dark .RoleSelectionForm .nameContainer button:active,
+.App.dark .RoleSelectionForm .bottomButton:hover,
+.App.dark .RoleSelectionForm .bottomButton:active {
+  background-color: var(--buttonColorDark);
+  color: var(--backgroundColorDark);
+}
+
+.RoleSelectionForm .groupSelectContainer {
+  margin: 10px 0 0 0;
+}
+
+.RoleSelectionForm .unitSelectContainer {
+  margin: 10px 0 0 0;
+}
+
+.RoleSelectionForm .bottomButton {
+  display: block;
+  box-sizing: border-box;
 }

@@ -1,4 +1,13 @@
 .MissionTime {
     padding: 5px;
-    border: 1px solid rgba(0,0,0,0.3);
+    border-width: 1px;
+    border-style: solid;
+}
+
+.App.light .MissionTime{
+    border-color: var(--textColorLight);
+}
+
+.App.dark .MissionTime{
+    border-color: var(--textColorDark);
 }

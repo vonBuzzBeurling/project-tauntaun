@@ -149,7 +149,7 @@ export function UserMenuBar() {
           />
         </Foldable>
       </div>
-      <div>
+      <div className="userMenuBarMapControl">
         <FormControlLabel
           value="start"
           control={<Checkbox checked={showLegend} color="primary" onChange={onShowLegendChange} />}

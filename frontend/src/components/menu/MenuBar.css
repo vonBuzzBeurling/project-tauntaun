@@ -78,6 +78,11 @@
   cursor: pointer;
 }
 
+.Menubar .MenuBarInner .userMenuBarMapControl{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
 .MapTypeSelect {
   margin-left: 10px;
   margin-right: 10px;

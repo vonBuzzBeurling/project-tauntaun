@@ -1,13 +1,22 @@
 .RoleOverviewContainer {
   z-index: 200;
   position: absolute;
-  background-color: #ffffff;
-  box-shadow: 0 0 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+  box-shadow: var(--shadow);
   width: 100%;
   height: 100%;
   overflow-y: auto;
   box-sizing: border-box;
   padding: 10px;
+}
+
+.App.light .RoleOverviewContainer {
+  background-color: var(--backgroundColorLight);
+  color: var(--textColorLight);
+}
+
+.App.dark .RoleOverviewContainer {
+  background-color: var(--backgroundColorDark);
+  color: var(--textColorDark);
 }
 
 .RoleOverviewContainer .RoleOverviewHeader {
@@ -35,11 +44,18 @@
   font-weight: bold;
   border-width: 0 0 1px 0;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.3);
   padding: 0 0 5px 0;
 }
 
-.RoleOverviewContainer .flightContainer{
+.App.light .RoleOverviewContainer .ROTable .ROTHeader div {
+  border-color: var(--versionColorLight);
+}
+
+.App.dark .RoleOverviewContainer .ROTable .ROTHeader div {
+  border-color: var(--versionColorDark);
+}
+
+.RoleOverviewContainer .flightContainer {
   overflow-y: auto;
   max-height: inherit;
 }
@@ -54,17 +70,34 @@
 
 .RoleOverviewContainer .CloseButton {
   font-size: 1.1rem;
-  border: 1px solid rgba(49, 107, 170, 1);
-  color: rgba(49, 107, 170, 1);
-  background-color: rgba(49, 107, 170, 0);
-  transition: all 0.3s ease;
+  border-width: 1px;
+  border-style: solid;
+  transition: var(--transition);
   padding: 10px;
   border-radius: 0;
+  background-color: transparent;
 }
 
-.RoleOverviewContainer .CloseButton:hover,
-.RoleOverviewContainer .CloseButton:active {
-  color: #ffffff;
-  background-color: rgba(49, 107, 170, 1);
+.App.light .RoleOverviewContainer .CloseButton {
+  border-color: var(--buttonColorLight);
+  color: var(--buttonColorLight);
+}
+
+.App.dark .RoleOverviewContainer .CloseButton {
+  border-color: var(--buttonColorDark);
+  color: var(--buttonColorDark);
+}
+
+.App.light .RoleOverviewContainer .CloseButton:hover,
+.App.light .RoleOverviewContainer .CloseButton:active {
+  color: var(--backgroundColorLight);
+  background-color: var(--buttonColorLight);
+  cursor: pointer;
+}
+
+.App.dark .RoleOverviewContainer .CloseButton:hover,
+.App.dark .RoleOverviewContainer .CloseButton:active {
+  color: var(--backgroundColorDark);
+  background-color: var(--buttonColorDark);
   cursor: pointer;
 }

@@ -1,4 +1,11 @@
 .Version {
-    color: gray;
     font-size: small;
+}
+
+.App.light .Version{
+    color: var(--versionColorLight);
+}
+
+.App.dark .Version{
+    color: var(--versionColorDark);
 }

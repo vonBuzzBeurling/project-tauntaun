@@ -3,7 +3,7 @@
     --transition: 0.3s all ease;
 
     --backgroundColorLight: #ffffff;
-    --backgroundColorDark: rgb(60,97,108);
+    --backgroundColorDark: rgb(36, 58, 65);
 
     --linkHoverLight: #dc143c;
     --linkHoverDark: rgb(192,216,53);
@@ -13,4 +13,7 @@
     
     --buttonColorLight: rgba(49, 107, 170,1);
     --buttonColorDark: rgb(192,216,53);
+
+    --versionColorLight: rgba(0, 0, 0, 0.5);
+    --versionColorDark: rgba(255, 255, 255, 0.5);
 }
